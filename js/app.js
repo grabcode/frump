@@ -6,7 +6,9 @@
   var module = angular.module('myApp', ['onsen', 'ui.map']);
 
   module.run(['$rootScope', function($rootScope){
-    $rootScope.state = {};
+    $rootScope.state = {
+      user: 'visitor'
+    };
   }]);
 
   module.controller('MapCtrl', function($scope, $data, $timeout, $rootScope) {
@@ -64,16 +66,17 @@
       console.log('onMapIdle');
     };
 
-    $timeout(function(){
-      $rootScope.state.farmer = $data.farmers['002'];
-      $rootScope.state.items = $data.items['002'];
-      $scope.ons.slidingMenu.setMainPage('tpl/producer.html');
-    }, 1000);
+    // $timeout(function(){
+    //   $rootScope.state.farmer = $data.farmers['002'];
+    //   $rootScope.state.items = $data.items['002'];
+    //   $scope.ons.slidingMenu.setMainPage('tpl/producer.html');
+    // }, 1000);
 
   })
 
   module.controller('ShopController', function($scope, $data, $rootScope) {
 
+    $scope.state.needAuth = false;
     $scope.total = 0;
 
     $scope.select = function(id){
@@ -88,6 +91,7 @@
 
     $scope.checkout = function(){
       console.log('checkout');
+      $scope.state.needAuth = true;
     };
 
     $scope.cancel = function(){
@@ -98,7 +102,28 @@
       $scope.ons.slidingMenu.setAbovePage('tpl/map.html');
     }
 
-  });
+  })
+
+  module.controller('AuthController', function($scope){
+
+    $scope.signin = function(){
+      FB.getLoginStatus(function(response) {
+        if (response.status === 'connected') {
+          $scope.$apply(function(){
+            console.log('already connected.');
+          });
+        }
+        else {
+          FB.login(function(res){
+            $scope.$apply(function(){
+              console.log('Logged in', res);
+            });   
+          }, {scope: "public_profile,email"});
+        }
+      });
+    };
+
+  })
 
   module.factory('$data', function() {
       var data = {};
@@ -164,10 +189,26 @@
 
 
 
-
-  // function onBtnClicked() {
-  //   map.showDialog();
-  // }
+  setTimeout(function(){
+    if(! window.isdeviceready){
+      $.ajaxSetup({ cache: true });
+      $.getScript('//connect.facebook.net/en_US/all.js', function(){
+        FB.init({
+          appId      : '312445838932889',
+          xfbml      : true,
+          version    : 'v2.0',
+          cookie     : true
+        });
+        // FB.login(function(res){
+        //     $scope.$apply(function(){
+        //       console.log('Logged in', res);
+        //     });   
+        //   }, {scope: "public_profile,email"});
+      });
+    }else{
+      log('device already ready');
+    }
+  }, 500);
 
 })();
 

@@ -17,6 +17,18 @@
 
   <ons-sliding-menu above-page="tpl/map.html" behind-page="tpl/menu.html" side="left" swipe-target-width="30px" max-slide-distance="250px" var="menu"></ons-sliding-menu>
 
+  <div class="modal-wrapper" ng-if="state.needAuth">
+    <div class="overlay"></div>
+    <div class="modal" ng-controller="AuthController">
+      <h5>Authentify to continue</h5>
+      <button class="slide-left button-- effeckt-button button no-select" ng-click="signin()">
+      <i class="fa fa-facebook"></i>
+        Login with Facebook
+      </button>
+        <p>We'll never post anything to Facebook</p>
+    </div>
+  </div>
+
   <script src="lib/onsen/js/angular/angular.min.js"></script>
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
