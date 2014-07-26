@@ -15,6 +15,21 @@
 	left: 0;
 	right: 0;
 	padding: 15px;
+	background-color: grey;
+}
+.producer-details{
+	text-align: center;
+}
+
+.name{
+	font-size: 24px;
+	font-weight: bold;
+}
+.desc{
+	font-size: 14px;
+}
+.producer-info{
+	background-color: white;
 }
 
 .producer-photo{
@@ -38,6 +53,7 @@
 
 .item{
 	height: 105px;
+    width:100%;
 }
 
 footer{
@@ -65,4 +81,33 @@ footer button{
 
 .menu .ons-list-item-inner i{
 	width: 30px;
+}
+
+.three {
+    width:27%;
+    display:inline-block;
+    padding:10px;
+    position:relative;
+}
+
+.price {
+    text-align:center;
+    font-size:20pt;
+    font-weight:bold;
+}
+
+.check {
+    text-align:center;
+    font-size:20pt;
+    font-weight:bold;
+    background-color:#999;
+    border-radius:10px;
+    max-width:40px;
+    float:right;
+    margin-right:20px;
+}
+
+
+.melon {
+    background-image: icons-sliced_03.png;
 }

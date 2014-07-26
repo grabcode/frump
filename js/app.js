@@ -64,11 +64,11 @@
       console.log('onMapIdle');
     };
 
-    $timeout(function(){
-      $rootScope.state.farmer = $data.farmers['002'];
-      $rootScope.state.items = $data.items['002'];
-      $scope.ons.slidingMenu.setMainPage('tpl/producer.html');
-    }, 1000);
+   // $timeout(function(){
+  //    $rootScope.state.farmer = $data.farmers['002'];
+  //    $rootScope.state.items = $data.items['002'];
+   //   $scope.ons.slidingMenu.setMainPage('tpl/producer.html');
+  //  }, 1000);
 
   })
 
