@@ -27,11 +27,12 @@
 
  	<div class="items">
 	 	<div class="item" ng-repeat="item in state.items" ng-click="select(item.id)">
-	      <div style = "background-image:url('img/carrot back.png');repeat:no-repeat ">
-	            <div class="price three">${{item.price}}</div>
-	            <div class="sort three"><img ng-src="img/{{item.sort}}.png"></div>
-				<div class="check three"><i ng-if="item.selected" class="fa fa-check"></i></div>
-	      </div>
+      <div style = "background-image:url('img/carrot back.png');background-repeat:no-repeat;  background-size:100% 103px; margin-top:1px;">
+      
+            <div class="price three">${{item.price}}</div>
+            <div class="sort three"><img class = "typeImg" ng-src="img/{{item.sort}}.png"></div>
+			<div class="check three"><i ng-if="item.selected" class="fa fa-check"></i></div>
+      </div>
 	 	</div>
 	</div>
 
