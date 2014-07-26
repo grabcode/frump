@@ -31,7 +31,7 @@
       
             <div class="price three">${{item.price}}</div>
             <div class="sort three"><img class = "typeImg" ng-src="img/{{item.sort}}.png"></div>
-			<div class="check three"><i ng-if="item.selected" class="fa fa-check"></i></div>
+			<div class="check three"><i ng-if="item.selected" class="fa fa-minus"></i><i ng-if="!item.selected" class="fa fa-plus"></i></div>
       </div>
 	 	</div>
 	</div>
