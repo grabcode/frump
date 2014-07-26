@@ -4,25 +4,34 @@
     <div class="left">
       <ons-toolbar-button ng-click="cancel()"><ons-icon icon="chevron-left"></ons-icon></ons-toolbar-button>
     </div>
-    <div class="center">{{state.farmer.name}}</div>
+    
   </ons-toolbar>
 
   <div class="producer">
-  	<img class="producer-photo" ng-src="{{state.farmer.photo}}">
-  	<div class="desc">{{state.farmer.desc}}</div>
-  	<div class="rating">
-  		<i class="fa fa-star"></i>
-  		<i class="fa fa-star"></i>
-  		<i class="fa fa-star"></i>
-  		<i class="fa fa-star-half-empty"></i>
-  		<i class="fa fa-star-o"></i>
-  	</div>
+    <div class = "producer-info">
+    	<img class="producer-photo" ng-src="{{state.farmer.photo}}">
+      <div class="producer-details">
+        <div class="name">{{state.farmer.name}}</div>
+      	<div class="desc">{{state.farmer.desc}}</div>
+      	<div class="rating">
+      		<i class="fa fa-star"></i>
+      		<i class="fa fa-star"></i>
+      		<i class="fa fa-star"></i>
+      		<i class="fa fa-star-half-empty"></i>
+      		<i class="fa fa-star-o"></i>
+      	</div>
+      </div> 
+    </div>
+
   </div>
 
  	<div class="items">
 	 	<div class="item" ng-repeat="item in state.items" ng-click="select(item.id)">
-	 		<div class="sort">{{item.sort}}</div>
-			<i ng-if="item.selected" class="fa fa-check"></i>
+      <div style = "background-image:url('img/carrot back.png');repeat:no-repeat ">
+            <div class="price three">${{item.price}}</div>
+            <div class="sort three"><img ng-src="img/{{item.sort}}.png"></div>
+			<div class="check three"><i ng-if="item.selected" class="fa fa-check"></i></div>
+      </div>
 	 	</div>
 	</div>
 
@@ -32,3 +41,4 @@
 
 </ons-page>
 </div>
+
