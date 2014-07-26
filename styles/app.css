@@ -1,3 +1,24 @@
+@font-face {
+  font-family: 'HelveticaNeue-CondensedBold';
+  font-weight: 900;
+  src: url("../fonts/helveticaneue-condensedbold-webfont.eot");
+  src: url("../fonts/helveticaneue-condensedbold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/helveticaneue-condensedbold-webfont.woff") format("woff"), url("../fonts/helveticaneue-condensedbold-webfont.ttf") format("truetype"), url("../fonts/helveticaneue-condensedbold-webfont.svg#helvetica_neuecondensed_bold") format("svg"); }
+
+@font-face {
+  font-family: 'nexa_boldregular';
+  src: url("../fonts/Nexa_Free_Bold-webfont.eot");
+  src: url("../fonts/Nexa_Free_Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Nexa_Free_Bold-webfont.woff") format("woff"), url("../fonts/Nexa_Free_Bold-webfont.ttf") format("truetype"), url("../fonts/Nexa_Free_Bold-webfont.svg#nexa_boldregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+* {
+  box-sizing: border-box;
+}
+
+body{
+	font-family: "nexa_boldregular";
+}
+
 .left {
 	text-align: left;
 }
@@ -79,6 +100,11 @@ footer button{
 	border-radius: 0 !important;
 }
 
+.menu{
+	height: 100%;
+}
+
+.menu,
 .menu .ons-page-inner,
 .menu .ons-list-inner,
 .menu .ons-list-header-inner,
@@ -93,6 +119,39 @@ footer button{
 
 .menu .ons-list-item-inner i{
 	width: 30px;
+}
+
+.modal-wrapper{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: rgba(0,0,0,0.8);
+}
+
+.modal{
+	background-color: white;
+	position: relative;
+	margin-top: 60%;
+	padding: 17px 0;
+}
+
+h5{
+	text-align: center;
+	margin: 0;
+	padding: 0 0 10px;
+}
+
+p{
+	margin: 0;
+	font-size: 11px;
+	padding: 5px;
+	text-align: center;
+}
+
+.modal button{
+	width: 80%;
+	margin: 0 10%;
 }
 
 .three {
