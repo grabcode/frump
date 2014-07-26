@@ -1,0 +1,34 @@
+<div ng-controller="ShopController">
+<ons-page>
+  <ons-toolbar>
+    <div class="left">
+      <ons-toolbar-button ng-click="cancel()"><ons-icon icon="chevron-left"></ons-icon></ons-toolbar-button>
+    </div>
+    <div class="center">{{state.farmer.name}}</div>
+  </ons-toolbar>
+
+  <div class="producer">
+  	<img class="producer-photo" ng-src="{{state.farmer.photo}}">
+  	<div class="desc">{{state.farmer.desc}}</div>
+  	<div class="rating">
+  		<i class="fa fa-star"></i>
+  		<i class="fa fa-star"></i>
+  		<i class="fa fa-star"></i>
+  		<i class="fa fa-star-half-empty"></i>
+  		<i class="fa fa-star-o"></i>
+  	</div>
+  </div>
+
+ 	<div class="items">
+	 	<div class="item" ng-repeat="item in state.items" ng-click="select(item.id)">
+	 		<div class="sort">{{item.sort}}</div>
+			<i ng-if="item.selected" class="fa fa-check"></i>
+	 	</div>
+	</div>
+
+	<footer>
+		<button class="slide-left button-- effeckt-button button no-select button--large" ng-click="checkout()">Total ${{total}} - Checkout</button>
+	</footer>
+
+</ons-page>
+</div>

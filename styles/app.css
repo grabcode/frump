@@ -1,0 +1,68 @@
+.left {
+	text-align: left;
+}
+
+#map,
+.map-canvas {
+	position: relative;
+	height: 100%;
+	z-index:0;
+	margin: auto;
+}
+
+.producer{
+	position: absolute;
+	left: 0;
+	right: 0;
+	padding: 15px;
+}
+
+.producer-photo{
+	height: 100px;
+	border-radius: 50px;
+	float: left;
+	margin-right: 10px;
+}
+
+.rating{
+	text-align: center;
+}
+
+.items{
+	position: absolute;
+	width: 100%;
+	top: 200px;
+	bottom: 44px;
+	overflow: scroll;
+}
+
+.item{
+	height: 105px;
+}
+
+footer{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+footer button{
+	border-radius: 0 !important;
+}
+
+.menu .ons-page-inner,
+.menu .ons-list-inner,
+.menu .ons-list-header-inner,
+.menu .ons-list-item-inner{
+	background: black;
+	color: white;
+}
+
+.menu .ons-list-header-inner{
+	margin-top: 45px;
+}
+
+.menu .ons-list-item-inner i{
+	width: 30px;
+}
