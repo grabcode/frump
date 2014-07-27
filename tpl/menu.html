@@ -1,7 +1,15 @@
-<div class="menu">
+<div class="menu" ng-controller="MenuController">
 <ons-list>
+	<ons-list-item ng-click="auth()" style="text-align:center;">
+	<i class="fa fa-facebook" ng-hide="state.user"></i>	
+	<span ng-hide="state.user">Signup/Login</span>
+	<span ng-show="state.user">{{state.user.name}}</span>
+	<i class="fa fa-lock" ng-hide="spin || state.user"></i>
+	<i class="fa fa-unlock" ng-show="state.user"></i>
+	<i class="fa fa-spinner fa-spin" ng-show="spin"></i>
+	</ons-list-item>
 	<ons-list-header>Feasting</ons-list-header>
-	<ons-list-item modifier="chevron" onclick="menu.setAbovePage('tpl/search.html', {closeMenu: true})">
+	<ons-list-item modifier="chevron" onclick="menu.setAbovePage('tpl/map.html', {closeMenu: true})">
 	<i class="fa fa-search"></i>
 	Forrage
 	</ons-list-item>
@@ -14,7 +22,7 @@
 	My Groceries
 	</ons-list-item>
 	<ons-list-header ng-if="state.user && state.user.role=='seller'">Farming</ons-list-header>
-	<ons-list-item ng-if="state.user && state.user.role=='seller'" modifier="chevron" onclick="menu.setAbovePage('tpl/search.html', {closeMenu: true})">
+	<ons-list-item ng-if="state.user && state.user.role=='seller'" modifier="chevron" ng-click="goto('crop');">
 	<i class="fa fa-leaf"></i>
 	Current Crop
 	</ons-list-item>
@@ -33,7 +41,7 @@
 	My Credit
 	</ons-list-item>
 	
-	<ons-list-header ng-if="state.user" >Miscellaneous</ons-list-header>
+	<!-- <ons-list-header ng-if="state.user" >Miscellaneous</ons-list-header>
 	<ons-list-item ng-if="state.user" modifier="chevron" onclick="menu.setAbovePage('tpl/legal.html', {closeMenu: true})">
 	<i class="fa fa-legal"></i>
 	Law of the Land
@@ -41,7 +49,7 @@
 	<ons-list-item ng-if="state.user" modifier="chevron" onclick="menu.setAbovePage('tpl/logout.html', {closeMenu: true})">
 	<i class="fa fa-sign-out"></i>
 	Leave the Farm
-	</ons-list-item>
+	</ons-list-item> -->
 	
 </ons-list>
 </div>

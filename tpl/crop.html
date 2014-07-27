@@ -1,4 +1,4 @@
-<div ng-controller="ShopController">
+<div ng-controller="MarketController">
 <ons-page>
   <ons-toolbar>
     <div class="left">
@@ -7,29 +7,11 @@
     <div class="center">Fifty Farmers</div>
   </ons-toolbar>
 
-  <div class="producer">
-    <div class = "producer-info">
-    	<img class="producer-photo" ng-src="{{state.farmer.photo}}">
-      <div class="producer-details">
-        <div class="name">{{state.farmer.name}}</div>
-      	<div class="desc">{{state.farmer.desc}}</div>
-      	<div class="rating">
-      		<i class="fa fa-star"></i>
-      		<i class="fa fa-star"></i>
-      		<i class="fa fa-star"></i>
-      		<i class="fa fa-star-half-empty"></i>
-      		<i class="fa fa-star-o"></i>
-      	</div>
-      </div> 
-    </div>
-
-  </div>
-
  	<div class="items">
 	 	<div class="item" ng-repeat="item in state.items" ng-click="select(item.id)" style="background-image:url('{{state.placeholders[item.sort]}}');">
      		<div class="price">${{item.price}}</div>
      		<img ng-src="{{state.icons[item.sort]}}">
-     		<div class="check"><i ng-if="item.selected" class="fa fa-check-circle fa-2x"></i></div>
+     		<div class="check" ng-click="remove(item.id)"><i class="fa fa-minus fa-2x"></i></div>
 	 	</div>
 	</div>
 
